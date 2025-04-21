@@ -1,0 +1,118 @@
+/* src/components/inputArea.css */
+
+.chat__footer {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: #f0f0f0; /* Optional: Background color */
+}
+
+.chat__footer > .MuiIconButton-root {
+  margin-right: 10px;
+}
+
+.chat__footer > form {
+  flex: 1;
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden; /* To contain the input border-radius */
+  background-color: white;
+}
+
+.chat__footer > form > input {
+  flex: 1;
+  padding: 8px 15px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.chat__footer > form > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 15px;
+  border: none;
+  background-color: #008069; /* WhatsApp send button color */
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Hide the text in the send button on smaller screens, show only the icon */
+.chat__footer > form > button > span {
+  display: none;
+  margin-left: 5px;
+}
+
+/* --- Responsive Design --- */
+
+/* For smaller screens (max-width: 600px) */
+@media (max-width: 600px) {
+  .chat__footer {
+    padding: 8px;
+  }
+
+  .chat__footer > .MuiIconButton-root {
+    margin-right: 8px;
+    padding: 8px; /* Adjust icon button size */
+  }
+
+  .chat__footer > form > input {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .chat__footer > form > button {
+    padding: 6px 10px;
+  }
+
+  .chat__footer > form > button > span {
+    display: none !important; /* Force hide text */
+  }
+}
+
+/* For slightly larger mobile screens (min-width: 601px and max-width: 768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+  .chat__footer > form > input {
+    font-size: 15px;
+    padding: 7px 12px;
+  }
+
+  .chat__footer > form > button > span {
+    display: none; /* Still hide text on tablets in portrait */
+  }
+}
+
+/* For tablets and larger (min-width: 769px) - Optionally show text on the send button */
+@media (min-width: 769px) {
+  .chat__footer > form > button {
+    padding: 8px 20px;
+  }
+
+  .chat__footer > form > button > span {
+    display: inline;
+  }
+}
+
+/* Landscape orientation adjustments for mobile (optional) */
+@media (max-width: 768px) and (orientation: landscape) {
+  .chat__footer {
+    padding: 6px;
+  }
+
+  .chat__footer > .MuiIconButton-root {
+    margin-right: 6px;
+    padding: 6px;
+  }
+
+  .chat__footer > form > input {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+
+  .chat__footer > form > button {
+    padding: 5px 8px;
+  }
+}
